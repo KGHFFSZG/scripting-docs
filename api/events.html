@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events - cedoscript</title>
+<style>
+:root { --accent: #32ADDE; --bg: #0f1115; --panel: #171a21; --text: #d7dae0; --muted: #8b93a1; --border: #262b36; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
+nav { width: 280px; flex-shrink: 0; background: var(--panel); border-right: 1px solid var(--border); padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+nav .brand { font-size: 20px; font-weight: 700; padding: 0 24px 20px; color: var(--accent); }
+nav .section { padding: 14px 24px 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+nav a { display: block; padding: 6px 24px; color: var(--text); text-decoration: none; font-size: 14px; border-left: 3px solid transparent; }
+nav a:hover { background: #1d212b; }
+nav a.active { border-left-color: var(--accent); background: #1d212b; color: var(--accent); }
+main { flex: 1; max-width: 860px; padding: 48px 56px 120px; }
+h1 { font-size: 30px; margin: 8px 0 24px; }
+h1[id] { font-size: 22px; margin: 36px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+h2 { font-size: 20px; } h3 { font-size: 17px; }
+p { line-height: 1.7; color: #c3c8d2; }
+pre { background: #10131a; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; overflow-x: auto; }
+code { font-family: "JetBrains Mono", Consolas, "Courier New", monospace; font-size: 13.5px; }
+pre code { color: #a9dc76; }
+p code, li code { background: #10131a; border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: #a9dc76; }
+a { color: var(--accent); }
+footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+@media (max-width: 800px) { nav { display: none; } main { padding: 28px 20px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">🤠 cedoscript</div>
+  <div class="section">Documentation</div>
+<a href="../../index.html" class="">Introduction</a>
+<a href="../../documentation/packets.html" class="">Packets</a>
+<div class="section">API</div>
+<a href="../../api/events.html" class="active">Events</a>
+<a href="../../api/settings.html" class="">Settings</a>
+<div class="section">API &gt; Objects</div>
+<a href="../../api/objects/color.html" class="">Color</a>
+<a href="../../api/objects/drag.html" class="">Drag</a>
+<a href="../../api/objects/entitylivingbase.html" class="">EntityLivingBase</a>
+<a href="../../api/objects/module.html" class="">Module</a>
+<a href="../../api/objects/timerutil.html" class="">TimerUtil</a>
+<div class="section">Bindings</div>
+<a href="../../bindings/client.html" class="">Client</a>
+<a href="../../bindings/module-manager.html" class="">Module Manager</a>
+<a href="../../bindings/player.html" class="">Player</a>
+<a href="../../bindings/packet.html" class="">Packet</a>
+<a href="../../bindings/notification.html" class="">Notification</a>
+<a href="../../bindings/render.html" class="">Render</a>
+<a href="../../bindings/user.html" class="">User</a>
+<a href="../../bindings/world.html" class="">World</a>
+<a href="../../bindings/font.html" class="">Font</a>
+</nav>
+<main>
+<h1 id="info">Info</h1>
+<h2 id="how-to-cancel-an-event">How to cancel an event</h2>
+<pre><code>event.setCancelled(true)</code></pre>
+<p>This will cancel the event.</p>
+<h1 id="enable">Enable</h1>
+<pre><code>script.onEnable(function () {...</code></pre>
+<p>This event will be called every time the script is enabled.</p>
+<h1 id="disable">Disable</h1>
+<pre><code>script.onDisable(function () {...</code></pre>
+<p>This event will be called every time the script is disabled.</p>
+<h1 id="update">Update</h1>
+<pre><code>script.onUpdate(function (event) {...</code></pre>
+<p>Called to update the entity&#x27;s position/logic.</p>
+<h2 id="functions">Functions</h2>
+<p>Function Description <code>isPre()</code> Returns true the event is onPre <code>isPost()</code> Returns true the event is onPost <code>isGround()</code> Returns true the player is on ground <code>setGround(ground)</code> Sets the player&#x27;s on ground state to the new state</p>
+<h1 id="packet-send">Packet Send</h1>
+<pre><code>script.onPacketSend(function (event) {...</code></pre>
+<p>Called before packets are sent to server.</p>
+<h2 id="functions-1">Functions</h2>
+<p>Function Description <code>getPacketID()</code> Returns the packet ID as a Number</p>
+<h1 id="packet-receive">​Packet Receive​</h1>
+<pre><code>script.onPacketReceive(function (event) {...</code></pre>
+<p>Called on packets received, before the client handles them.</p>
+<h1 id="tick">Tick</h1>
+<pre><code>script.onTick(function (event) {...</code></pre>
+<p>Called on each tick.</p>
+<h1 id="motion">Motion</h1>
+<pre><code>script.onMotion(function (event) {...</code></pre>
+<p>Called on motion updates.</p>
+<h2 id="functions-2">Functions</h2>
+<p>Function Description <code>setX(x)</code> Sets the players x position using the event <code>setY(y)</code> Sets the players y position using the event <code>setZ(z)</code> Sets the players z position using the event <code>isGround()</code> Returns true the player is on ground <code>setGround(ground)</code> Sets the player&#x27;s on ground state to the new state <code>getYaw()</code> Returns the players yaw as a Number <code>setYaw(yaw)</code> Sets the players yaw using the event <code>getPitch()</code> Returns the players pitch as a Number <code>setPitch(pitch)</code> Sets the players pitch using the event <code>isPre()</code> Returns true the event is onPre <code>isPost()</code> Returns true the event is onPost</p>
+<h1 id="player-move">Player Move</h1>
+<pre><code>script.onPlayerMove(function (event) {...</code></pre>
+<p>Called when a player is moving.</p>
+<h1 id="render-3d">Render 3D</h1>
+<pre><code>script.onRender3D(function (event) {...</code></pre>
+<p>Called on the rendering of 3D objects.</p>
+<h2 id="functions-3">Functions</h2>
+<p>Function Description <code>getTicks()</code> Returns the event&#x27;s ticks as a Number</p>
+<h1 id="render-2d">Render 2D</h1>
+<pre><code>script.onRender2D(function (event) {...</code></pre>
+<p>Called on the rendering of 2D objects.</p>
+<h1 id="shader">Shader</h1>
+<pre><code>script.onShader(function (ev) {...</code></pre>
+<p>Everything in this event will be blurred when the Blur module is enabled and will have a shadow when the shadow boolean is enabled in the Blur module</p>
+<footer>Recovered from the Wayback Machine archive of scripting.tenacity.dev</footer>
+</main>
+</body>
+</html>

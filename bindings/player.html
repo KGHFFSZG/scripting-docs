@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player - cedoscript</title>
+<style>
+:root { --accent: #32ADDE; --bg: #0f1115; --panel: #171a21; --text: #d7dae0; --muted: #8b93a1; --border: #262b36; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
+nav { width: 280px; flex-shrink: 0; background: var(--panel); border-right: 1px solid var(--border); padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+nav .brand { font-size: 20px; font-weight: 700; padding: 0 24px 20px; color: var(--accent); }
+nav .section { padding: 14px 24px 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+nav a { display: block; padding: 6px 24px; color: var(--text); text-decoration: none; font-size: 14px; border-left: 3px solid transparent; }
+nav a:hover { background: #1d212b; }
+nav a.active { border-left-color: var(--accent); background: #1d212b; color: var(--accent); }
+main { flex: 1; max-width: 860px; padding: 48px 56px 120px; }
+h1 { font-size: 30px; margin: 8px 0 24px; }
+h1[id] { font-size: 22px; margin: 36px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+h2 { font-size: 20px; } h3 { font-size: 17px; }
+p { line-height: 1.7; color: #c3c8d2; }
+pre { background: #10131a; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; overflow-x: auto; }
+code { font-family: "JetBrains Mono", Consolas, "Courier New", monospace; font-size: 13.5px; }
+pre code { color: #a9dc76; }
+p code, li code { background: #10131a; border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: #a9dc76; }
+a { color: var(--accent); }
+footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+@media (max-width: 800px) { nav { display: none; } main { padding: 28px 20px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">🤠 cedoscript</div>
+  <div class="section">Documentation</div>
+<a href="../../index.html" class="">Introduction</a>
+<a href="../../documentation/packets.html" class="">Packets</a>
+<div class="section">API</div>
+<a href="../../api/events.html" class="">Events</a>
+<a href="../../api/settings.html" class="">Settings</a>
+<div class="section">API &gt; Objects</div>
+<a href="../../api/objects/color.html" class="">Color</a>
+<a href="../../api/objects/drag.html" class="">Drag</a>
+<a href="../../api/objects/entitylivingbase.html" class="">EntityLivingBase</a>
+<a href="../../api/objects/module.html" class="">Module</a>
+<a href="../../api/objects/timerutil.html" class="">TimerUtil</a>
+<div class="section">Bindings</div>
+<a href="../../bindings/client.html" class="">Client</a>
+<a href="../../bindings/module-manager.html" class="">Module Manager</a>
+<a href="../../bindings/player.html" class="active">Player</a>
+<a href="../../bindings/packet.html" class="">Packet</a>
+<a href="../../bindings/notification.html" class="">Notification</a>
+<a href="../../bindings/render.html" class="">Render</a>
+<a href="../../bindings/user.html" class="">User</a>
+<a href="../../bindings/world.html" class="">World</a>
+<a href="../../bindings/font.html" class="">Font</a>
+</nav>
+<main>
+<h1 id="sendpacket">sendPacket</h1>
+<pre><code>player.sendPacket(packet.C03PacketPlayer, true)</code></pre>
+<p>See <a href="../../documentation/packets.html">packet documentation</a> ​</p>
+<p>​</p>
+<h1 id="sendmessage">sendMessage</h1>
+<pre><code>player.sendMessage(msg)</code></pre>
+<p>Parameter Type Description msg String Message you want the player to send</p>
+<h1 id="respawn">respawn</h1>
+<pre><code>player.respawn()</code></pre>
+<p>Sends a respawn packet</p>
+<h1 id="swingitem">swingItem</h1>
+<pre><code>player.swingItem()</code></pre>
+<p>Makes the player swing the current item.</p>
+<h1 id="setpitch">setPitch</h1>
+<pre><code>player.setPitch(pitch)</code></pre>
+<p>Sets the player&#x27;s pitch</p>
+<p>Parameter Type Description pitch Number New player pitch</p>
+<h1 id="setyaw">setYaw</h1>
+<pre><code>player.setYaw(yaw)</code></pre>
+<p>Sets the player&#x27;s yaw</p>
+<p>Parameter Type Description yaw Number New player yaw</p>
+<h1 id="setmotionx">setMotionX</h1>
+<pre><code>player.setMotionX(motionX)</code></pre>
+<p>Sets the player&#x27;s motionX</p>
+<p>Parameter Type Description motionX Number New player motionX</p>
+<h1 id="setmotiony">setMotionY</h1>
+<pre><code>player.setMotionY</code></pre>
+<p>Sets the player&#x27;s motionY</p>
+<p>Parameter Type Description motionY Number New player motionY</p>
+<h1 id="setmotionz">setMotionZ</h1>
+<pre><code>player.setMotionZ(motionZ)</code></pre>
+<p>Sets the player&#x27;s motionZ</p>
+<p>Parameter Type Description motionZ Number New player motionZ</p>
+<h1 id="setposition">setPosition</h1>
+<pre><code>player.setPosition(x, y, z)</code></pre>
+<p>Sets the players position</p>
+<p>Parameter Type Description x Number New player pos x y Number New player pos y z Number New player pos z</p>
+<h1 id="jump">jump</h1>
+<pre><code>player.jump()</code></pre>
+<p>Makes the player jump</p>
+<h1 id="timerspeed">timerSpeed</h1>
+<pre><code>var currentTimerSpeed = player.timerSpeed()</code></pre>
+<p>Returns the player&#x27;s current timer speed as a Number</p>
+<h1 id="speed">speed</h1>
+<pre><code>var currentSpeed = player.speed()</code></pre>
+<p>Returns the player&#x27;s current speed as a Number</p>
+<h1 id="setspeed">setSpeed</h1>
+<pre><code>player.setSpeed(speed)</code></pre>
+<p>Sets the player&#x27;s speed</p>
+<p>Parameter Type Description speed Number New player speed</p>
+<h1 id="setsneaking">setSneaking</h1>
+<pre><code>player.setSneaking(sneaking)</code></pre>
+<p>Sets to true to make the player sneak</p>
+<p>Parameter Type Description sneaking Boolean Set to true to make the player sneak</p>
+<h1 id="setsprinting">setSprinting</h1>
+<pre><code>player.setSprinting(sprinting)</code></pre>
+<p>Sets to true to make the player sprint</p>
+<p>Parameter Type Description sprinting Boolean Set to true to make the player sprint</p>
+<h1 id="setfalldistance">setFallDistance</h1>
+<pre><code>player.setFallDistance(fallDistance)</code></pre>
+<p>Sets the player&#x27;s fall distance</p>
+<p>Parameter Type Description fallDistance Number New player fall distance</p>
+<h1 id="leftclick">leftClick</h1>
+<pre><code>player.leftClick()</code></pre>
+<p>Clicks the left mouse button</p>
+<h1 id="rightclick">rightClick</h1>
+<pre><code>player.rightClick()</code></pre>
+<p>Clicks the right mouse button</p>
+<h1 id="sethelditemslot">setHeldItemSlot</h1>
+<pre><code>player.setHeldItemSlot(slot)</code></pre>
+<p>Set the current held item of the local player.</p>
+<p>Parameter Type Description slot Number New slot of the item in the hotbar (0-8)</p>
+<h1 id="collidedhorizontally">collidedHorizontally</h1>
+<pre><code>player.collidedHorizontally()</code></pre>
+<p>Returns true if the player was collided horizontally</p>
+<h1 id="collidedvertically">collidedVertically</h1>
+<pre><code>player.collidedVertically()</code></pre>
+<p>Returns true if the player was collided horizontally</p>
+<h1 id="collided">collided</h1>
+<pre><code>player.collided()</code></pre>
+<p>Returns true if the player was collided at all</p>
+<h1 id="moving">moving</h1>
+<pre><code>player.moving()</code></pre>
+<p>Returns true if the player is moving</p>
+<h1 id="sneaking">sneaking</h1>
+<pre><code>player.sneaking()</code></pre>
+<p>Returns true if the player is sneaking</p>
+<h1 id="sprinting">sprinting</h1>
+<pre><code>player.sprinting()</code></pre>
+<p>Returns true if the player is sprinting</p>
+<h1 id="eating">eating</h1>
+<pre><code>player.eating()</code></pre>
+<p>Returns true if the player is eating</p>
+<h1 id="onground">onGround</h1>
+<pre><code>player.onGround()</code></pre>
+<p>Returns true if the player is on ground</p>
+<h1 id="airborne">airBorne</h1>
+<pre><code>player.airBorne()</code></pre>
+<p>Returns true if the player is air borne</p>
+<h1 id="onladder">onLadder</h1>
+<pre><code>player.onLadder()</code></pre>
+<p>Returns true if the player is on a ladder</p>
+<h1 id="inwater">inWater</h1>
+<pre><code>player.inWater()</code></pre>
+<p>Returns true if the player is in water</p>
+<h1 id="inlava">inLava</h1>
+<pre><code>player.inLava()</code></pre>
+<p>Returns true if the player is in lava</p>
+<h1 id="inweb">inWeb</h1>
+<pre><code>player.inWeb()</code></pre>
+<p>Returns true if the player is in a web</p>
+<h1 id="inportal">inPortal</h1>
+<pre><code>player.inPortal()</code></pre>
+<p>Returns true if the player is in a portal</p>
+<h1 id="usingitem">usingItem</h1>
+<pre><code>player.usingItem()</code></pre>
+<p>Returns true if the player is using an item</p>
+<h1 id="burning">burning</h1>
+<pre><code>player.burning()</code></pre>
+<p>Returns true if the player is burning</p>
+<h1 id="dead">dead</h1>
+<pre><code>player.dead()</code></pre>
+<p>Returns true if the player is dead</p>
+<h1 id="name">name</h1>
+<pre><code>player.name()</code></pre>
+<p>Returns the player&#x27;s name as a String</p>
+<h1 id="hurttime">hurtTime</h1>
+<pre><code>player.hurtTime()</code></pre>
+<p>Returns the player&#x27;s hurt time as a Number</p>
+<h1 id="helditemslot">heldItemSlot</h1>
+<pre><code>player.heldItemSlot()</code></pre>
+<p>Returns the player&#x27;s currently held item&#x27;s slot as a Number</p>
+<h1 id="ticksexisted">ticksExisted</h1>
+<pre><code>player.ticksExisted()</code></pre>
+<p>Returns the player&#x27;s ticks existed as a Number</p>
+<h1 id="falldistance">fallDistance</h1>
+<pre><code>player.fallDistance()</code></pre>
+<p>Returns the player&#x27;s fall distance as a Number</p>
+<h1 id="health">health</h1>
+<pre><code>player.health()</code></pre>
+<p>Returns the player&#x27;s health as a Number</p>
+<h1 id="maxhealth">maxHealth</h1>
+<pre><code>player.maxHealth()</code></pre>
+<p>Returns the player&#x27;s max health as a Number</p>
+<h1 id="armor">armor</h1>
+<pre><code>player.armorValue()</code></pre>
+<p>Returns the player&#x27;s total armor value as a Number</p>
+<h1 id="hunger">hunger</h1>
+<pre><code>player.hunger()</code></pre>
+<p>Returns the player&#x27;s food level as a Number</p>
+<h1 id="absorption">absorption</h1>
+<pre><code>player.absorption()</code></pre>
+<p>Returns the player&#x27;s absorption level as a Number</p>
+<h1 id="pitch">pitch</h1>
+<pre><code>player.pitch()</code></pre>
+<p>Returns the player&#x27;s pitch as a Number</p>
+<h1 id="yaw">yaw</h1>
+<pre><code>player.yaw()</code></pre>
+<p>Returns the player&#x27;s yaw as a Number</p>
+<h1 id="x">x</h1>
+<pre><code>player.x()</code></pre>
+<p>Returns the player&#x27;s x pos as a Number</p>
+<h1 id="y">y</h1>
+<pre><code>player.y()</code></pre>
+<p>Returns the player&#x27;s y pos as a Number</p>
+<h1 id="z">z</h1>
+<pre><code>player.z()</code></pre>
+<p>Returns the player&#x27;s z pos as a Number</p>
+<h1 id="motionx">motionX</h1>
+<pre><code>player.motionX()</code></pre>
+<p>Returns the player&#x27;s motion x as a Number</p>
+<h1 id="motiony">motionY</h1>
+<pre><code>player.motionY()</code></pre>
+<p>Returns the player&#x27;s motion y as a Number</p>
+<h1 id="motionz">motionZ</h1>
+<pre><code>player.motionZ()</code></pre>
+<p>Returns the player&#x27;s motion z as a Number</p>
+<footer>Recovered from the Wayback Machine archive of scripting.tenacity.dev</footer>
+</main>
+</body>
+</html>
